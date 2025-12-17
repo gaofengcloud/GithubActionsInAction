@@ -22,10 +22,6 @@ on:
         - warning
         - error
         - debug
-      env:
-        description: Environment to run tests against
-        type: environment
-        required: true
 
 jobs:
   MyFirstJob:
@@ -38,3 +34,6 @@ jobs:
         run:  |
           echo "The repo ${{ github.repository }} contains the following files:"
           tree
+          echo "homedrive=${{ inputs.homedrive }}"
+          echo "tag=${{ inputs.tag }}
+          echo "loglevel=${{ inputs.tag }}"
