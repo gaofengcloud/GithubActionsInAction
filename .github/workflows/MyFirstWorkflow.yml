@@ -37,3 +37,18 @@ jobs:
           echo "homedrive=${{ inputs.homedrive }}"
           echo "tag=${{ inputs.tag }}"
           echo "loglevel=${{ inputs.tag }}"
+  SecondJob:
+    runs-on: ubuntu-latest
+    needs: MyFirstJob
+    steps:
+      - run: "echo Job: ${{ github.job }}"
+  ThirdJob:
+    runs-on: ubuntu-latest
+    needs: SecondJob
+    steps:
+      - run: "echo Job: ${{ github.job }}"
+  FourthJob:
+    runs-on: ubuntu-latest
+    needs: [SecondJob, ThirdJob]
+    steps:
+      - run: "echo Job: ${{ github.job }}"
