@@ -35,5 +35,5 @@ jobs:
           echo "The repo ${{ github.repository }} contains the following files:"
           tree
           echo "homedrive=${{ inputs.homedrive }}"
-          echo "tag=${{ inputs.tag }}
+          echo "tag=${{ inputs.tag }}"
           echo "loglevel=${{ inputs.tag }}"
